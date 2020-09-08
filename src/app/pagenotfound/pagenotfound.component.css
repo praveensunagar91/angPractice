@@ -1,0 +1,26 @@
+.section{
+  background-image: url(src/assets/pagenot.jpg);
+  width: 100%;
+  height: calc(100vh - (2em + 18px));
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
+    background-repeat: no-repeat;
+}
+
+a.movhom {
+  margin-top: 530px;
+  background-color: #00BCD4;
+  color: white;
+  padding: 9px 8px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+a.movhom:hover {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}

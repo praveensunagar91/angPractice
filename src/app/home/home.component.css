@@ -1,0 +1,9 @@
+.section{
+  background-image: url(src/assets/angular.jpg);
+  width: 100%;
+  height: calc(100vh - (2em + 18px));
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
+    background-repeat: no-repeat;
+}
