@@ -1,0 +1,29 @@
+.card {
+    width: 98%;
+    padding: 40px;
+    margin: 20px auto;
+    background-color: cornsilk;
+}
+button.addbtn {
+  float: right;
+  margin-bottom: 10px;
+  padding: 6px 11px;
+  border: 1px solid fuchsia;
+  background: ghostwhite;
+  border-radius: 16px;
+}
+button.addbtn:hover {
+  background-color: deeppink;
+  border:none;
+  /* border: 2px solid navy; */
+  color: white;
+  cursor: pointer;
+}
+.valid{
+  color: red;
+}
+
+.btnSec h3{
+  color: cornflowerblue;
+  font-weight: 900;
+}

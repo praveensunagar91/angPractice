@@ -1,0 +1,107 @@
+<div class="card">
+  <div class="btnSec">
+    <h3>Players Records</h3>
+    <button type="button" class="addbtn" data-bs-toggle="modal" data-bs-target="#exampleModal" >Add Player</button>
+  </div>
+  <table class="table table-hover table-striped">
+   <thead>
+     <th>Number</th>
+     <th>Name</th>
+     <th>Country</th>
+     <th>Action</th>
+   </thead>
+   <tbody>
+     <tr *ngFor="let item of arr; let i=index">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.country}}</td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="onDelete(item)">Remove</button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-secondary" (click)="onEdit(i)" data-bs-toggle="modal" data-bs-target="#exampleModal1">Update</button>
+      </td>
+     </tr>
+   </tbody>
+  </table>
+</div>
+
+<!-- /////add player//////// -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Player Information</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <form   #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+         <div class="form-group row">
+           <label>Number</label>
+           <input name="id" type="text" class="form-control" placeholder="Enter Number" ngModel required pattern="[0-9]*" #id="ngModel">
+           <span class="valid" *ngIf="id.hasError('required') && id.touched">Id is required</span>
+           <span class="valid" *ngIf="id.hasError('pattern') && !id.pristine">only numbers are allowed</span>
+         </div>
+         <div class="form-group row">
+          <label>Name</label>
+          <input name="name" type="text" class="form-control" placeholder="Enter Name" ngModel required pattern="[a-zA-Z\s]*" #name="ngModel">
+          <span class="valid" *ngIf="name.hasError('required') && name.touched">Name is required</span>
+          <span class="valid" *ngIf="name.hasError('pattern') && !name.pristine">only alphabets are allowed</span>
+        </div>
+        <div class="form-group row">
+          <label>Country</label>
+          <input name="country" type="text" class="form-control" placeholder="Enter Country" ngModel required pattern="[a-zA-Z\s]*" #country="ngModel">
+          <span class="valid" *ngIf="country.hasError('required') && country.touched">Country is required</span>
+          <span class="valid" *ngIf="country.hasError('pattern') && !country.pristine">only alphabets are allowed</span>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" [disabled]="!f.valid" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+       </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- //////Update Information////////// -->
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Player Information</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form   #f="ngForm" (ngSubmit)="onUpdate(f.value)">
+          <div class="form-group row">
+            <label>Number</label>
+            <input name="id" type="text" class="form-control" placeholder="Enter Number"  [(ngModel)]="Id">
+          </div>
+          <div class="form-group row">
+           <label>Name</label>
+           <input name="name" type="text" class="form-control" placeholder="Enter Name"  [(ngModel)]="Name">
+         </div>
+         <div class="form-group row">
+           <label>Country</label>
+           <input name="country" type="text" class="form-control" placeholder="Enter Country"  [(ngModel)]="Country">
+         </div>
+         <div class="modal-footer">
+           <button type="submit" [disabled]="!f.valid" class="btn btn-primary">Update</button>
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+         </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

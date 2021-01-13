@@ -14,6 +14,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DisplayComponent } from './ngrxstore/display/display.component';
 import { InsertComponent } from './ngrxstore/insert/insert.component';
 import { userReducer } from './ngrxstore/reducer';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { PracticeComponent } from './practice/practice.component';
 
 
 
@@ -30,6 +33,12 @@ import { userReducer } from './ngrxstore/reducer';
     DisplayComponent,
 
     InsertComponent,
+
+    ParentComponent,
+
+    ChildComponent,
+
+    PracticeComponent,
 
 
 
